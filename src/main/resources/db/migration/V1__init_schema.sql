@@ -1,0 +1,33 @@
+-- -- create Users table
+-- CREATE TABLE users
+-- (
+--     id              UUID PRIMARY KEY,
+--     username        VARCHAR(255) UNIQUE      NOT NULL,
+--     email           VARCHAR(255) UNIQUE      NOT NULL,
+--     hashed_password VARCHAR(255)             NOT NULL,
+--     created_at      TIMESTAMP WITH TIME ZONE NOT NULL
+-- );
+--
+-- -- create Events table
+-- CREATE TABLE events
+-- (
+--     id         UUID PRIMARY KEY,
+--     title      VARCHAR(255)             NOT NULL,
+--     created_by UUID                     NOT NULL,
+--     created_at TIMESTAMP WITH TIME ZONE NOT NULL,
+--
+--     FOREIGN KEY (created_by) REFERENCES users (id) ON DELETE CASCADE
+-- );
+--
+-- -- create Participants table
+-- CREATE TABLE participants
+-- (
+--     user_id   UUID                         NOT NULL,
+--     event_id  UUID                         NOT NULL,
+--     role      VARCHAR(20) DEFAULT 'MEMBER' NOT NULL,
+--     joined_at TIMESTAMP WITH TIME ZONE     NOT NULL,
+--
+--     PRIMARY KEY (user_id, event_id),
+--     FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE,
+--     FOREIGN KEY (event_id) REFERENCES events (id) ON DELETE CASCADE
+-- );

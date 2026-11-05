@@ -1,0 +1,17 @@
+spring:
+  application.name: one-share
+
+  jpa.hibernate.ddl-auto: validate
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/oneshare_db}
+    username: ${SPRING_DATASOURCE_USERNAME:root}
+    password: ${SPRING_DATASOURCE_PASSWORD:secretpassword}
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+application:
+  jwt:
+    secret: ${SPRING_JWT_SECRET:qgm+yz6Duep1peY2NfeUnTKImT5PaDmwDR83RyN7F0I=}
+    expiration: ${SPRING_JWT_EXPIRATION:604800}
